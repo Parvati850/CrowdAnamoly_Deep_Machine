@@ -1,0 +1,36 @@
+# CrowdAnomalyDetection – Python dependencies
+# Pinned to versions tested in the project .venv (Python 3.11.9)
+# Install with:  pip install -r requirements.txt
+#
+# To create a fresh venv:
+#   python -m venv .venv
+#   .\.venv\Scripts\Activate.ps1
+#   pip install -r requirements.txt
+
+# Core computer vision & numerics
+opencv-python==5.0.0.93
+numpy==2.4.6
+pandas==3.0.6
+
+# Machine learning
+scikit-learn==1.9.1
+
+# Configuration
+PyYAML==6.0.3
+
+# Visualisation
+matplotlib==3.11.2
+plotly==7.1.0
+
+# Dashboard
+streamlit==1.65.0
+
+# Deep learning (CPU-only path; no GPU required)
+torch==2.14.1
+
+# Testing
+pytest==9.1.1
+pytest-cov==7.1.0
+
+# Utilities
+tqdm==4.70.1

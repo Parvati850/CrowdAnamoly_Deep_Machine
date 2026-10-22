@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Generated data (large files — do not commit)
+generated_data/frames/
+generated_data/features/
+
+# Dataset videos (never commit — too large, original files)
+config/Normal Crowds/
+config/Abnormal Crowds/
+dataset/Crowd Dataset - extra/
+
+# Trained model checkpoints (can be large)
+models/*.pkl
+models/*.pth
+
+# Output artifacts
+outputs/logs/*.log
+outputs/logs/*.csv
+outputs/reports/*.json
+outputs/plots/*.png
+
+# Streamlit cache — exclude local cache but keep config.toml
+.streamlit/*.json
+.streamlit/secrets.toml
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+.venv/
+__pycache__/
+.pytest_cache/
+.streamlit/secrets.toml
+.env
+*.py[cod]

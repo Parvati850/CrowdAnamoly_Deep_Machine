@@ -1,0 +1,69 @@
+# ============================================================
+# CrowdAnomalyDetection – Central Configuration
+# ============================================================
+# All paths are relative to the project root unless noted.
+# Change dataset_root to your actual dataset location.
+
+dataset:
+  # dataset_root is the parent directory that contains the three video folders.
+  # After project setup the folders landed at these locations inside the project:
+  #   Normal Crowds    → config/Normal Crowds
+  #   Abnormal Crowds  → config/Abnormal Crowds
+  #   Crowd Dataset-extra → dataset/Crowd Dataset - extra
+  # We use the project root as dataset_root and set full relative sub-paths.
+  dataset_root: "D:/7th sem/DL/Mini_Project/CrowdAnomalyDetection"
+  normal_folder: "config/Normal Crowds"
+  abnormal_folder: "config/Abnormal Crowds"
+  extra_folder: "dataset/Crowd Dataset - extra"
+  video_extensions: [".avi", ".mov", ".mp4", ".wmv", ".flv", ".mkv", ".mpeg", ".mpg", ".m4v"]
+  manifest_path: "dataset/dataset_manifest.csv"
+
+preprocessing:
+  frame_sample_interval: 10       # Extract every Nth frame
+  target_width: 224
+  target_height: 224
+  preserve_aspect_ratio: true
+  frames_output_dir: "generated_data/frames"
+  features_output_dir: "generated_data/features"
+  random_seed: 42
+
+training:
+  test_size: 0.25                  # Fraction of labelled videos held out for test
+  val_size: 0.15                   # Fraction of training videos used for validation
+  random_seed: 42
+  model_output_dir: "models"
+  checkpoint_name: "baseline_model.pkl"
+  deep_checkpoint_name: "deep_model.pth"
+
+model:
+  type: "baseline"                 # "baseline" | "deep"
+  baseline_classifier: "random_forest"   # "random_forest" | "svm" | "logistic"
+  n_estimators: 100
+  max_depth: null
+
+alerts:
+  threshold: 0.55                  # Anomaly score threshold (0–1)
+  persistence: 3                   # Consecutive high-score frames before alert fires
+  cooldown_seconds: 10             # Minimum gap between repeated alerts
+  log_path: "outputs/logs/alerts.csv"
+
+inference:
+  frame_sample_interval: 10
+  target_width: 224
+  target_height: 224
+  queue_size: 64
+
+live:
+  webcam_index: 0
+  rtsp_url: ""                     # Leave empty to use webcam
+  display_fps: true
+
+output:
+  reports_dir: "outputs/reports"
+  plots_dir: "outputs/plots"
+  logs_dir: "outputs/logs"
+  results_csv: "outputs/reports/inference_results.csv"
+
+logging:
+  level: "INFO"                    # DEBUG | INFO | WARNING | ERROR
+  log_file: "outputs/logs/app.log"

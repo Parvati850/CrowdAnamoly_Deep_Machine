@@ -1,0 +1,21 @@
+[server]
+headless = false
+port = 8501
+# Set to true when running on a remote server without a browser
+# headless = true
+
+[browser]
+gatherUsageStats = false
+
+[logger]
+# Suppress the "missing ScriptRunContext" warning that appears when
+# Streamlit components are called outside a running app (e.g. in tests).
+level = "error"
+
+[theme]
+base = "light"
+primaryColor = "#e74c3c"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f8f9fa"
+textColor = "#212529"
+font = "sans serif"
