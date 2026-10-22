@@ -230,3 +230,4 @@ python -m pytest tests/ -v
 | `app.py` | Session-state guard prevents re-processing on reruns; temp file cleanup in all paths; video metadata shown before analysis; playback preview; `source_name` set to filename; Live Monitor camera pre-check; Event Log ack/dismiss by ID; Model Performance per-video breakdown |
 | `motion_features.py` | Docstring corrected (was "34 values", actually 33) |
 | Tests | 18 new tests added (51 total); covers threshold boundary, unique IDs, source_name, ack/dismiss, corrupt video, dedup |
+# CrowdAnamoly_Deep_Machine
